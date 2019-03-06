@@ -2,8 +2,9 @@
 # tasks file for cmaker-unattended-upgrades
 
 - name: Install the unattented-upgrades packages.
-  package: "{{ unattented_packages }}"
-  state: present
+  package: 
+    name: "{{ unattented_packages }}"
+    state: present
   
 - name: Make sure we send an email when changes are completed.
   lineinfile:
