@@ -1,14 +1,14 @@
 ---
 # tasks file for cmaker-unattended-upgrades
 
-- name: Install the unattented-upgrades packages.
-  package: 
-    name: "{{ unattented_packages }}"
-    state: present
+#- name: Install the unattented-upgrades packages.
+#  package: 
+#    name: "{{ unattented_packages }}"
+#    state: present
   
 - name: Make sure we send an email when changes are completed.
   lineinfile:
     path: /etc/apt/apt.conf.d/50unattended-upgrades
     regexp: '^Unattended-Upgrade::Mail "laurentfdumont@gmail.com";'
-    line: '{{ unattented_upgrades_email }}'
+    line: 'Unattended-Upgrade::Mail {{ unattented_upgrades_email }}'
     
