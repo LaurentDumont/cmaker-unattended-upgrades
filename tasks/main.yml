@@ -9,6 +9,6 @@
 - name: Make sure we send an email when changes are completed.
   lineinfile:
     path: /etc/apt/apt.conf.d/50unattended-upgrades
-    regexp: '^Unattended-Upgrade::Mail laurentfdumont@gmail.com;'
+    regexp: '^Unattended-Upgrade::Mail "laurentfdumont@gmail.com";'
     line: 'Unattended-Upgrade::Mail "{{ unattented_upgrades_email }}";'
     
